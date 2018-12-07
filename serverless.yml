@@ -1,0 +1,24 @@
+service: super-security
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-2
+
+plugins:
+  - serverless-offline
+
+functions:
+  encrypt:
+    handler: dist/handler.handle
+
+    events:
+     - http:
+         path: encrypt/{data}
+         method: get
+
+package:
+  include:
+    - dist/handler.js
+  exclude:
+    - "**"

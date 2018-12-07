@@ -1,0 +1,27 @@
+{
+  "name": "super-security",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sls": "sls",
+    "tsc": "tsc",
+    "start": "concurrently \"npm run watch\" \"npm run parcel\" \"npm run start-sls\"",
+    "watch": "tsc -w",
+    "parcel": "parcel handler.js",
+    "start-sls": "sls offline start",
+    "deploy": "sls deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serverless": "^1.34.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.12",
+    "concurrently": "^4.1.0",
+    "parcel-bundler": "^1.10.3",
+    "serverless-offline": "^3.31.3",
+    "typescript": "^3.2.2"
+  }
+}
