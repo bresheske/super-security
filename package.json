@@ -10,7 +10,8 @@
     "watch": "tsc -w",
     "parcel": "parcel handler.js",
     "start-sls": "sls offline start",
-    "deploy": "sls deploy"
+    "build": "tsc && parcel build handler.js",
+    "deploy": "npm run build && sls deploy"
   },
   "author": "",
   "license": "ISC",
